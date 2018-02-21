@@ -1,0 +1,8 @@
+[user]
+	name = Paramjot Singh
+	email = param.chhina@gmail.com
+[color]
+	ui = auto
+[alias]
+	br = branch
+	co = checkout
