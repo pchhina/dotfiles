@@ -121,3 +121,5 @@ export GOPATH="/usr/share/go/"
 export PATH=$PATH:/usr/bin/
 
 alias config='/usr/bin/git --git-dir=/home/psingh/.cfg/ --work-tree=/home/psingh'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

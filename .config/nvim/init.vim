@@ -4,11 +4,15 @@ Plug 'roxma/nvim-completion-manager'
 Plug 'gaalcaras/ncm-R'
 Plug 'sirver/UltiSnips'
 Plug 'w0rp/ale'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'chriskempson/base16-vim'
 Plug 'junegunn/limelight.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 call plug#end()
 
 set nocompatible
@@ -45,24 +49,21 @@ let g:tagbar_type_r = {
 
 "N-vim-R options
 let maplocalleader = ","
-let R_max_help_w = 80
-let R_min_editor_width = 80
-let R_rconsole_width = 1000 
+autocmd VimResized * let R_rconsole_width = winwidth(0) / 2
+let R_nvimpager = "no"
 
 " keybinding Nvim-R
 nmap <LocalLeader>m <Plug>RSendParagraph
 nmap <LocalLeader>f <Plug>RSendFile
 nmap <LocalLeader>s <Plug>RObjectStr
 
-" R output is highlighted with current colorscheme
-let g:rout_follow_colorscheme = 1
+" Use tmux for terminal emulator instead of Nvim built in emulator
+let R_in_buffer = 0
 
-" R commands in R output are highlighted
-let g:Rout_more_colors = 1
+" keybindings non- Nvim-R
+" FZF buffers
+:map <C-j> :Buffers<CR>
 
-" More natural split opening
-set splitbelow
-set splitright
-
-
+" FZF Files
+:map <C-f> :Files<CR>
 
